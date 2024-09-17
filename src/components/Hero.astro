@@ -5,8 +5,8 @@ import Text from "./reuse/Text.astro";
 import CTAbtn from "./CTAbtn.jsx"
 import logo from "../assets/hero/logo.png"
 import hero from "../assets/hero/hero.webp"
-import { Image } from "astro:assets";
 import Socials from "./Socials.astro";
+import { Image } from "astro:assets";
 ---
 
 <div class="bg">
@@ -16,7 +16,7 @@ import Socials from "./Socials.astro";
             <Heading1>Crafting Words that Spark Action</Heading1>
             <Text class="mb-5">By strategic copywriting designed to engage your audience and turn visitors into loyal customers.</Text>
             <CTAbtn client:load/>
-            <Socials class="mt-5 w-fit"/>
+            <Socials class="mt-5"/>
         </div>
         <Image src={hero} alt="" loading="eager" class="hidden md:block"/>
     </Container>
@@ -25,7 +25,7 @@ import Socials from "./Socials.astro";
 <style>
     @media (max-width: 767px) {
         .bg {
-            background-image: url(../assets/hero/hero.webp);
+            background-image: url("../assets/hero/hero.webp");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
