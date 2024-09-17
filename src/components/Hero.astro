@@ -1,0 +1,41 @@
+---
+import Container from "./reuse/Container.astro";
+import Heading1 from "./reuse/Heading1.astro";
+import Text from "./reuse/Text.astro";
+import CTAbtn from "./CTAbtn.jsx"
+import logo from "../assets/hero/logo.png"
+import hero from "../assets/hero/hero.webp"
+import { Image } from "astro:assets";
+import Socials from "./Socials.astro";
+---
+
+<div class="bg">
+    <Container class="pt-0 pb-0 grid items-center gap-8 md:grid-cols-2">
+        <div class="flex flex-col gap-5 z-10 text-center md:text-left lg:max-w-[90%]">
+            <Image src={logo} alt="" loading="eager" class="w-[50%] backdrop-blur-sm self-center md:self-start"/>
+            <Heading1>Crafting Words that Spark Action</Heading1>
+            <Text class="mb-5">By strategic copywriting designed to engage your audience and turn visitors into loyal customers.</Text>
+            <CTAbtn client:load/>
+            <Socials class="mt-5 w-fit"/>
+        </div>
+        <Image src={hero} alt="" loading="eager" class="hidden md:block"/>
+    </Container>
+</div>
+
+<style>
+    @media (max-width: 767px) {
+        .bg {
+            background-image: url(../assets/hero/hero.webp);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            position: relative;
+        }
+        .bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+    }
+</style>

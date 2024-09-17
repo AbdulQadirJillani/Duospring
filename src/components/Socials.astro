@@ -1,0 +1,23 @@
+---
+import { cn } from "@/lib/utils"
+const props = Astro.props
+const socials = [
+    {
+        icon: "pi pi-twitter",
+        links: "https://x.com/Mike08655680102?t=d761hlSC2SRNWNwnxqaEHw&s=33"
+    },
+    {
+        icon: "pi pi-facebook text-[#0862f6]",
+        links: "https://www.facebook.com/share/qzDdDmGjd5gCjUYm/?mibextid=qi2Omg"
+    },
+]
+---
+<div class={cn("flex gap-5", props.class)}>
+    {
+        socials.map(({ icon, links }) => (
+            <a href={links} target="_blank">
+                <i class={cn("text-[30px] rounded-full", icon)}/>
+            </a>
+        ))
+    }
+</div>

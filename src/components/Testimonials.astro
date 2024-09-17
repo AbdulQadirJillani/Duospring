@@ -1,0 +1,30 @@
+---
+import Container from "./reuse/Container.astro"
+import Testimonial from "./Testimonial.astro"
+import id1 from "../assets/testimonials/id1.jpg"
+import id2 from "../assets/testimonials/id2.webp"
+import id3 from "../assets/testimonials/id3.webp"
+const data = [
+    {
+        pic: id1,
+        id: "Ted Sparrey",
+        review: "Working with this agency was a game-changer for our business. Their copy didn't just sound great—it transformed our engagement rates and helped us connect with our audience on a whole new level. Highly recommend!"
+    },
+    {
+        pic: id2,
+        id: "Gayle Carpenter",
+        review: "Their attention to detail and ability to capture our brand's voice was remarkable. The website copy they delivered not only sounded authentic but also increased our conversions by 35% in just three months."
+    },
+    {
+        pic: id3,
+        id: "Adrian Baillie",
+        review: "From start to finish, the team was professional, creative, and dedicated. The product descriptions they created were engaging and informative, which directly resulted in a 20% increase in sales."
+    },
+]
+---
+
+<Container class="min-h-0 pt-0 grid gap-8 lg:grid-cols-3">
+    {
+        data.map(({pic, id, review}) => <Testimonial pic={pic} id={id} review={review}/>)
+    }
+</Container>

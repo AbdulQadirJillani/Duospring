@@ -1,0 +1,19 @@
+---
+
+import 'primeicons/primeicons.css';
+import { Image } from "astro:assets";
+import Text from "./reuse/Text.astro";
+const { pic, id, review } = Astro.props
+---
+<div class="flex flex-col gap-3">
+    <div class="flex gap-3 items-center">
+        <Image class='size-10 rounded-full shadow-lg ring-1 ring-gray' src={pic} alt=""/>
+        <Text class="font-bold text-[#0A2540]">{id}</Text>
+    </div>
+    <div class="flex gap-1">
+        {
+            [1, 2, 3, 4, 5].map((e) => <i class="pi pi-star-fill text-[#FABB05]"/>)
+        }
+    </div>
+    <div class="text-[#425466]">{review}</div>
+</div>

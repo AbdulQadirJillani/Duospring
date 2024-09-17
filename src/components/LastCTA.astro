@@ -1,0 +1,12 @@
+---
+import Container from "./reuse/Container.astro";
+import Heading2 from "./reuse/Heading2.astro";
+import CTAbtn from "./CTAbtn.jsx"
+import Socials from "./Socials.astro";
+---
+
+<Container class="min-h-0 pt-0 flex flex-col gap-5 md:gap-8 items-center justify-center">
+    <Heading2 class="max-w-[600px] text-center">Bringing stories to life, never bringin' strife.</Heading2>
+    <CTAbtn client:load/>
+    <Socials/>
+</Container>

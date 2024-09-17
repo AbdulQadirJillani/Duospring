@@ -1,0 +1,50 @@
+---
+import Container from "./reuse/Container.astro";
+import Benefit from "./Benefit.astro";
+import benefit1 from "../assets/benefits/benefit1.webp"
+import benefit2 from "../assets/benefits/benefit2.webp"
+import benefit3 from "../assets/benefits/benefit3.svg"
+import benefit4 from "../assets/benefits/benefit4.png"
+import benefit5 from "../assets/benefits/benefit5.webp"
+
+const benefits = [
+    {
+        icon: "pi pi-microphone text-3xl md:text-4xl text-[#0A2540]",
+        feature: "Tailored Brand Voice",
+        benefit: "Your unique voice, amplified. Our expert copywriters craft messages that echo your brand's personality, making your audience feel connected and understood on a personal level.",
+        image: benefit1
+    },
+    {
+        icon: 'pi pi-bolt text-3xl md:text-4xl text-[#0A2540]',
+        feature: "Compelling Calls-to-Action (CTAs)",
+        benefit: "Words that spark action. With irresistible CTAs, we turn passive visitors into engaged customers, driving them to take that next step effortlessly.",
+        image: benefit2
+    },
+    {
+        icon: 'pi pi-sparkles text-3xl md:text-4xl text-[#0A2540]',
+        feature: "SEO-Optimized Content",
+        benefit: "Get found by those who matter. Reach more potential customers organically with content that’s crafted to rank high while staying engaging, ensuring you're always in front of your ideal audience.",
+        image: benefit3
+    },
+    {
+        icon: 'pi pi-chart-bar text-3xl md:text-4xl text-[#0A2540]',
+        feature: "Data-Driven Copy Strategies",
+        benefit: "Boost conversions like never before. We don’t just write pretty words; we use proven strategies to ensure every sentence is designed to convert, increasing leads, sales, and your bottom line.",
+        image: benefit4
+    },
+    {
+        icon: 'pi pi-globe text-3xl md:text-4xl text-[#0A2540]',
+        feature: "Multi-Channel Copywriting",
+        benefit: "Consistency that shines everywhere. Whether it's your website, emails, or social media, our cohesive copy ensures your brand’s story resonates across all platforms, captivating your audience no matter where they find you.",
+        image: benefit5
+    }
+]
+---
+
+<Container class="flex flex-col gap-12 lg:gap-16 pt-0">
+    {
+        benefits.map(({ icon, feature, benefit, image }, i) => (
+            <Benefit key={feature} icon={icon} feature={feature} benefit={benefit} image={image} orientation={i}/>
+        ))
+    }
+</Container>

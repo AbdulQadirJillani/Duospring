@@ -1,0 +1,10 @@
+---
+import Container from "./reuse/Container.astro";
+import Heading2 from "./reuse/Heading2.astro";
+import FAQraw from "./FAQraw.jsx"
+---
+
+<Container class="min-h-0 pt-0 flex flex-col justify-center items-center gap-3 md:gap-5">
+    <Heading2>FAQs</Heading2>
+    <FAQraw client:load/>
+</Container>
